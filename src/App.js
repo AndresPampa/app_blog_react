@@ -5,6 +5,7 @@ import Blog from './componentes/Blog';
 import AcercaDe from './componentes/AcercaDe';
 import Header from './componentes/Header';
 import styled from 'styled-components';
+import Post from './componentes/Post';
 
 const App = () =>{
   return(
@@ -13,9 +14,10 @@ const App = () =>{
         <Header />
         <Main>
           <Routes>
-            <Route path='/' element={<Inicio />}/>
-            <Route path='/blog'element={<Blog />}/>
-            <Route path='/acerca-de' element={<AcercaDe />}/>
+            <Route path="/" element={<Inicio />}/>
+            <Route path="/blog" element={<Blog />}/>
+            <Route path="/post/:id" element={<Post />}/>
+            <Route path="/acerca-de" element={<AcercaDe />}/>
           </Routes>
         </Main>
       </ContenedorPrincipal>
@@ -34,6 +36,6 @@ const Main = styled.main`
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(129, 129, 129,0.1);
-`
+`;
 
 export default App;
